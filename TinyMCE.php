@@ -3,12 +3,11 @@
 add_action( 'init', __NAMESPACE__ . '\mapmarker_buttons' );
 
 function mapmarker_buttons() {
-    if ( !current_user_can( 'edit_posts' ) && !current_user_can( 'edit_pages' ) ) {
-        return;
-    }
-    if ( 'true' == get_user_option( 'rich_editing' ) ) {
-        add_filter( 'mce_external_plugins', __NAMESPACE__ . '\add_buttons' );
-        add_filter( 'mce_buttons', __NAMESPACE__ . '\register_buttons' );
+    if( User::canEdit() ){
+        if ( 'true' == get_user_option( 'rich_editing' ) ) {
+            add_filter( 'mce_external_plugins', __NAMESPACE__ . '\add_buttons' );
+            add_filter( 'mce_buttons', __NAMESPACE__ . '\register_buttons' );
+        }
     }
 }
 function add_buttons( $plugin_array ) {
