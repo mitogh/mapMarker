@@ -9,4 +9,5 @@
  * License: GPL2
  */
 
-include( plugin_dir_path( __FILE__ ) . 'TinyMCE.php');
+include plugin_dir_path( __FILE__ ) . 'TinyMCE.php';
+include plugin_dir_path( __FILE__ ) . 'ajax.php';
