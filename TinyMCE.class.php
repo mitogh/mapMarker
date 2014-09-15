@@ -30,7 +30,6 @@ class TinyMCE{
     }
 
     private function callMethod( $method_name ){
-        $class_name = get_class($this);
         return array($this, $method_name);
     }
 
