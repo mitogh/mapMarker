@@ -12,4 +12,3 @@ function open_mapparker_creator_callback() {
     //throw new themedelta_Clean_Exit();
 }
 ?>
-

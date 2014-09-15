@@ -10,5 +10,8 @@
  */
 
 include plugin_dir_path( __FILE__ ) . 'User.class.php';
-include plugin_dir_path( __FILE__ ) . 'TinyMCE.php';
+include plugin_dir_path( __FILE__ ) . 'TinyMCE.class.php';
+
+$editor = new TinyMCE();
+
 include plugin_dir_path( __FILE__ ) . 'ajax.php';
