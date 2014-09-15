@@ -17,20 +17,19 @@ class TinyMCE{
         return get_user_option( 'rich_editing' ) == 'true';
     }
 
-    public function addButtonFilter(){
+    private function addButtonFilter(){
         add_filter( 'mce_external_plugins', $this->callMethod('addButton') );
     }
 
-    public function registerButtonFilter(){
+    private function registerButtonFilter(){
         add_filter( 'mce_buttons', $this->callMethod('registerButton') );
     }
 
-    public function enqueueStyleToAdmin(){
+    private function enqueueStyleToAdmin(){
         add_action( 'admin_enqueue_scripts', $this->callMethod('registerButtonStyle') );
     }
-    //add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\register_button_style' );
 
-    public function callMethod( $method_name ){
+    private function callMethod( $method_name ){
         $class_name = get_class($this);
         return array($this, $method_name);
     }
