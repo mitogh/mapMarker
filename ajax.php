@@ -9,6 +9,5 @@ function open_mapparker_creator_callback() {
         die(__("You are not allowed to be here"));
 
     include_once plugin_dir_path( __FILE__) . '/editor/map-creator.php';
-    //throw new themedelta_Clean_Exit();
 }
 ?>
