@@ -8,7 +8,7 @@ function createHTMLDOOM(){
     var mapcanvas = document.createElement('div');
     mapcanvas.id = 'mapcontainer';
     mapcanvas.style.height = '400px';
-    mapcanvas.style.width = '580px';
+    mapcanvas.style.width = '500px';
 
     document.querySelector('#map').appendChild(mapcanvas);
 }

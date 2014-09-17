@@ -1,18 +1,8 @@
-* {
+*{
     margin: 0;
     padding: 0;
 }
 
-#container {
-    overflow: hidden;
-}
-
-#panel {
-    float: left;
-    width: 220;
-}
-
-#map {
-    float: right;
-    width: 580px;
+body {
+     max-width:600px;
 }
