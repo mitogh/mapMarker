@@ -17,6 +17,8 @@ $editor = new TinyMCE();
 
 include $base_path . 'ajax.class.php';
 
+$user = new User();
+$ajax = new AjaxRequest( $user );
+
 $path = $base_path . '/editor/map-creator.php';
-$ajax = new AjaxRequest();
 $ajax->send( $path );
