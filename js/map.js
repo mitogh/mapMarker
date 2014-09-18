@@ -15,7 +15,9 @@ function createHTMLDOOM(){
 
 function createMap(){
     var mapOptions = {
-        mapTypeControl: true,
+        mapTypeControl: false,
+        streetViewControl: false,
+        panControl: false,
         center: place,
         zoom: 4
     };
