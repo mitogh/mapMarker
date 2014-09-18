@@ -9,9 +9,14 @@
  * License: GPL2
  */
 
-include plugin_dir_path( __FILE__ ) . 'User.class.php';
-include plugin_dir_path( __FILE__ ) . 'TinyMCE.class.php';
+$base_path = plugin_dir_path( __FILE__ );
+include $base_path . 'User.class.php';
+include $base_path . 'TinyMCE.class.php';
 
 $editor = new TinyMCE();
 
-include plugin_dir_path( __FILE__ ) . 'ajax.php';
+include $base_path . 'ajax.class.php';
+
+$path = $base_path . '/editor/map-creator.php';
+$ajax = new AjaxRequest();
+$ajax->send( $path );
