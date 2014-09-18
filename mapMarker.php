@@ -10,6 +10,7 @@
  */
 
 $base_path = plugin_dir_path( __FILE__ );
+include $base_path . 'Wordpress.class.php';
 include $base_path . 'User.class.php';
 include $base_path . 'TinyMCE.class.php';
 

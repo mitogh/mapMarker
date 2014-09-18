@@ -1,6 +1,6 @@
 <?php namespace mitogh\github\com;
 
-class AjaxRequest{
+class AjaxRequest extends Wordpress{
     private $url = '';
 
     private $user = null;
@@ -21,14 +21,6 @@ class AjaxRequest{
 
     public function registerActionInWordpress(){
         add_action('wp_ajax_open_mapmarker_creator', $this->callMethod('execute'));
-    }
-
-    /**
-     * Array to call the method from the class as is required more info:
-     * http://codex.wordpress.org/Function_Reference/add_action#Using_with_a_Class
-     */
-    private function callMethod( $method_name ){
-        return array($this, $method_name);
     }
 
     public function execute(){
