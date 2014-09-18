@@ -32,10 +32,16 @@ global $wp_scripts;
 
                     <div class="form-group">
                         <label for="width">Width </label>
-                        <input id="width" name="width" type="number" class="form-control" placeholder="500px">
+                        <div class="input-group">
+                            <input id="width" name="width" type="number" class="form-control" placeholder="500">
+                            <span class="input-group-addon">px</span>
+                        </div>
 
                         <label for="height">Height </label>
-                        <input id="height" name="height" type="number" class="form-control" placeholder="400px">
+                        <div class="input-group">
+                            <input id="height" name="height" type="number" class="form-control" placeholder="400">
+                            <span class="input-group-addon">px</span>
+                        </div>
                     </div>
 
                     <div class="form-group">
