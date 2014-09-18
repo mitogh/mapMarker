@@ -15,6 +15,7 @@ global $wp_scripts;
         <script type="text/javascript" src="<?php echo site_url(); ?>/wp-includes/js/tinymce/tiny_mce_popup.js"></script>
         <script type="text/javascript" src="<?php echo site_url(); ?>/wp-includes/js/tinymce/utils/form_utils.js"></script>
         <base target="_self" />
+        <?php wp_print_scripts(); ?>
     </head>
 
     <body id="link">
@@ -25,7 +26,7 @@ global $wp_scripts;
                 <form role="form">
                     <div class="form-group">
                         <label for="location">Location </label>
-                        <input id="location" name="location" type="text" class="form-control" placeholder="Mexico">
+                        <input id="location" name="location" type="text" class="form-control" placeholder="Enter a city">
                     </div>
 
 
@@ -54,8 +55,9 @@ global $wp_scripts;
           </div>
         </div>
     </div>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="<?php  echo plugin_dir_url( __FILE__ ). '../js/map.js'; ?>"></script>
+    <script src="<?php  echo plugin_dir_url( __FILE__ ). '../js/editor.js'; ?>"></script>
     </body>
 </html>
