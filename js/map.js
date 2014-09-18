@@ -58,7 +58,6 @@ function updateMap( type ){
 
 function getTypeOfMap( t ){
     var tmp = t.toLowerCase();
-    console.log(tmp);
     if(tmp === "roadmap"){
         return google.maps.MapTypeId.ROADMAP;
     }else if(tmp === "satellite"){
