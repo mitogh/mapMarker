@@ -36,7 +36,9 @@ global $wp_scripts;
                             <input id="width" name="width" type="number" class="form-control" placeholder="500">
                             <span class="input-group-addon">px</span>
                         </div>
+                    </div>
 
+                    <div class="form-group">
                         <label for="height">Height </label>
                         <div class="input-group">
                             <input id="height" name="height" type="number" class="form-control" placeholder="400">
