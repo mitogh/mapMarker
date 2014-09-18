@@ -10,13 +10,21 @@
         $("#width").on('focusout keyup', function(){
             var actualWidth = $(this).val();
             $("#mapcontainer").css("width", actualWidth); 
-            google.maps.event.trigger(map, 'resize');
+            redraw();
         });
 
         $("#height").on('focusout keyup', function(){
             var actualHeight = $(this).val();
             $("#mapcontainer").css("height", actualHeight); 
-            google.maps.event.trigger(map, 'resize');
+            redraw();
         });
+
+        $( "select" ).on('change', function(){
+            var type = "";
+            $( "select option:selected" ).each(function() {
+                type = $(this).val();
+            });
+            updateMap(type);
+        }).trigger('change');
     });
 })(jQuery);

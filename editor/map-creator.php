@@ -49,8 +49,10 @@ global $wp_scripts;
                     <div class="form-group">
                         <label for="type">Terrain: </label>
                         <select class="form-control">
-                            <option value="Satellite">Satellite</option>
-                            <option value="Hybrid">Hybrid</option>
+                            <option value="roadmap">Road Map</option>
+                            <option value="satellite">Satellite</option>
+                            <option value="hybrid">Hybrid</option>
+                            <option value="terrain">Terrain</option>
                         </select>
                     </div>
 

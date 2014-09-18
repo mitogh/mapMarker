@@ -51,4 +51,27 @@ function addListeners(){
     google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
 }
 
+function updateMap( type ){
+    var type = getTypeOfMap(type);
+    map.setMapTypeId( type );
+}
+
+function getTypeOfMap( t ){
+    var tmp = t.toLowerCase();
+    console.log(tmp);
+    if(tmp === "roadmap"){
+        return google.maps.MapTypeId.ROADMAP;
+    }else if(tmp === "satellite"){
+        return google.maps.MapTypeId.SATELLITE;
+    }else if(tmp === "hybrid"){
+        return google.maps.MapTypeId.HYBRID;
+    }else{
+        return google.maps.MapTypeId.TERRAIN;
+    }
+}
+
+function redraw(){
+    google.maps.event.trigger(map, 'resize');
+}
+
 appendMap();
