@@ -1,64 +1,54 @@
-var directionsDisplay;
-var directionsService = new google.maps.DirectionsService();
 var map;
-var place = new google.maps.LatLng(-25.363882,131.044922);
+var origin = new google.maps.LatLng(19.429570, -99.131585);
+var mapOptions = {
+    mapTypeControl: false,
+    streetViewControl: false,
+    panControl: false,
+    center: origin,
+    zoom: 12
+};
 
 function createHTMLDOOM(){
-    directionsDisplay = new google.maps.DirectionsRenderer();
     var mapcanvas = document.createElement('div');
     mapcanvas.id = 'mapcontainer';
     mapcanvas.style.height = '400px';
     mapcanvas.style.width = '500px';
 
-    document.querySelector('#map').appendChild(mapcanvas);
+    appenMapToDOM(mapcanvas);
+}
+
+function appenMapToDOM( element ){
+    document.querySelector('#map').appendChild(element);
 }
 
 function createMap(){
-    var mapOptions = {
-        mapTypeControl: false,
-        streetViewControl: false,
-        panControl: false,
-        center: place,
-        zoom: 4
-    };
     return new google.maps.Map(document.getElementById("mapcontainer"), mapOptions);
 }
 
-function addMark(map){
-    var marker = new google.maps.Marker({
-        position: place,
-        map: map,
-        title: 'Hello World!'
-    });
+function createAutoComplete(){
+    return new google.maps.places.Autocomplete( document.getElementById('location'), {});
 }
 
-function createAutoComplete(){
-    new google.maps.places.Autocomplete(
-        (document.getElementById('location')), {
-        types: ['geocode']
-    });
-}
 function onPlaceChanged() {
     var place = autocomplete.getPlace();
     if (place.geometry) {
         map.panTo(place.geometry.location);
-        map.setZoom(15);
+        map.setZoom(16);
     } else {
         document.getElementById('location').placeholder = 'Enter a city';
     }
-
 }
-function showMap(){
+
+function appendMap(){
     createHTMLDOOM();
     map = createMap();
-    directionsDisplay.setMap(map);
-    autocomplete = new google.maps.places.Autocomplete( document.getElementById('location'),
-    {
-        types: ['(cities)']
-    });
     places = new google.maps.places.PlacesService(map);
+    autocomplete = createAutoComplete();
+    addListeners();
+}
 
+function addListeners(){
     google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
 }
 
-showMap();
+appendMap();
