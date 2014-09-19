@@ -25,6 +25,10 @@
             });
             updateMap(type);
         }).trigger('change');
+
+        $("#add-new-mark-button").on('click', function( event ){
+            avoidDefaultBehavior( event );
+        });
     });
 })(jQuery);
 
@@ -32,9 +36,14 @@ function avoidNormalBehaviorOnEnterKey( event ){
     var enterKey = 13;
 
     if( event.which == enterKey ){
-        event.preventDefault();
+        avoidDefaultBehavior( event );
     }
 }
+
+function avoidDefaultBehavior( event ){
+    event.preventDefault();
+}
+
 function getInPixel( expectedValue, defaultValue ){
 
     if( typeof defaulValue == undefined ){
