@@ -9,21 +9,15 @@
 
         $("#width").on('focusout keyup', function(){
             var actualWidth = $(this).val();
-            var width = parseInt(actualWidth);
-            if( isNaN(width) || width <= 0 ){
-                width = 500;
-            }
-            $("#mapcontainer").css("width", width + "px"); 
+            var width = getInPixel(actualWidth);
+            $("#mapcontainer").css("width", width); 
             redraw();
         });
 
         $("#height").on('focusout keyup', function(){
             var actualHeight = $(this).val();
-            var height = parseInt(actualHeight);
-            if( isNaN(height) || height <= 0){
-                height = 400;
-            }
-            $("#mapcontainer").css("height", height + "px"); 
+            var height = getInPixel(actualHeight, 500);
+            $("#mapcontainer").css("height", height); 
             redraw();
         });
 
@@ -36,3 +30,31 @@
         }).trigger('change');
     });
 })(jQuery);
+
+function avoidNormalBehaviorOnEnterKey( event ){
+}
+function getInPixel( expectedValue, defaultValue ){
+    
+    if( typeof defaulValue == undefined ){
+        var defaultValue = 400;
+    }
+    
+    if( isValidNumber( expectedValue ) ){
+        return getValueInPixel(expectedValue);
+    }else{
+        return getValueInPixel(defaulValue);
+    }
+}
+
+function isValidNumber( number ){
+    number = parseInt(number);
+    if( !isNaN(number) && number > 0 ){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function getValueInPixel( number ){
+    return number + "px";
+}
