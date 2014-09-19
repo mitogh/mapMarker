@@ -1,10 +1,7 @@
 (function($){
-    var enterKey = 13;
     $(document).ready(function(){
         $("#location").on('keydown', function( event ){
-            if( event.which == enterKey ){
-                event.preventDefault();
-            }
+            avoidNormalBehaviorOnEnterKey(event);
         });
 
         $("#width").on('focusout keyup', function(){
@@ -32,13 +29,18 @@
 })(jQuery);
 
 function avoidNormalBehaviorOnEnterKey( event ){
+    var enterKey = 13;
+
+    if( event.which == enterKey ){
+        event.preventDefault();
+    }
 }
 function getInPixel( expectedValue, defaultValue ){
-    
+
     if( typeof defaulValue == undefined ){
         var defaultValue = 400;
     }
-    
+
     if( isValidNumber( expectedValue ) ){
         return getValueInPixel(expectedValue);
     }else{
