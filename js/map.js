@@ -56,16 +56,22 @@ function updateMap( type ){
     map.setMapTypeId( type );
 }
 
-function getTypeOfMap( t ){
-    var tmp = t.toLowerCase();
-    if(tmp === "roadmap"){
-        return google.maps.MapTypeId.ROADMAP;
-    }else if(tmp === "satellite"){
-        return google.maps.MapTypeId.SATELLITE;
-    }else if(tmp === "hybrid"){
-        return google.maps.MapTypeId.HYBRID;
-    }else{
-        return google.maps.MapTypeId.TERRAIN;
+function getTypeOfMap( terrain ){
+    terrain = terrain.toLowerCase();
+
+    var type = getTypesOfMaps();
+
+    if( type[terrain] ){
+        return type[terrain];
+    }
+}
+
+function getTypesOfMaps(){
+    return {
+        "roadmap" : google.maps.MapTypeId.ROADMAP,
+        "satellite" : google.maps.MapTypeId.SATELLITE,
+        "hybrid" : google.maps.MapTypeId.HYBRID,
+        "terrain": google.maps.MapTypeId.TERRAIN
     }
 }
 
