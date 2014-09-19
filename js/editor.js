@@ -9,13 +9,21 @@
 
         $("#width").on('focusout keyup', function(){
             var actualWidth = $(this).val();
-            $("#mapcontainer").css("width", actualWidth); 
+            var width = parseInt(actualWidth);
+            if( isNaN(width) || width <= 0 ){
+                width = 500;
+            }
+            $("#mapcontainer").css("width", width + "px"); 
             redraw();
         });
 
         $("#height").on('focusout keyup', function(){
             var actualHeight = $(this).val();
-            $("#mapcontainer").css("height", actualHeight); 
+            var height = parseInt(actualHeight);
+            if( isNaN(height) || height <= 0){
+                height = 400;
+            }
+            $("#mapcontainer").css("height", height + "px"); 
             redraw();
         });
 
