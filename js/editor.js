@@ -27,7 +27,7 @@
             updateMap(type);
         }).trigger('change');
 
-        $("#add-new-mark-button").on('click', function( event ){
+        $(".btn-remove-markers").on('click', function( event ){
             avoidDefaultBehavior( event );
         });
     });
