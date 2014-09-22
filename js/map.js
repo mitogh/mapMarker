@@ -1,5 +1,6 @@
 var map;
 var origin = new google.maps.LatLng(19.429570, -99.131585);
+var markers = [];
 var mapOptions = {
     mapTypeControl: false,
     streetViewControl: false,
@@ -49,6 +50,17 @@ function appendMap(){
 
 function addListeners(){
     google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+    google.maps.event.addListener(map, 'click', function(event) {
+        addMarker(event.latLng);
+    });
+}
+
+function addMarker(location) {
+    var marker = new google.maps.Marker({
+        position: location,
+        map: map
+    });
+    markers.push(marker);
 }
 
 function updateMap( type ){
