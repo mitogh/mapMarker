@@ -19,7 +19,6 @@
         });
 
         $( "select.terrain-control" ).on('change', function(){
-          console.log('this');
             var type = "";
             $( "select.terrain-control option:selected" ).each(function() {
                 type = $(this).val();
