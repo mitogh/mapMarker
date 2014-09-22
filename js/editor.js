@@ -18,9 +18,10 @@
             redraw();
         });
 
-        $( "select" ).on('change', function(){
+        $( "select.terrain-control" ).on('change', function(){
+          console.log('this');
             var type = "";
-            $( "select option:selected" ).each(function() {
+            $( "select.terrain-control option:selected" ).each(function() {
                 type = $(this).val();
             });
             updateMap(type);
