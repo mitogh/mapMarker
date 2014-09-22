@@ -63,6 +63,22 @@ function addMarker(location) {
     markers.push(marker);
 }
 
+function deleteMarkers() {
+  clearMarkers();
+  markers = [];
+}
+
+function clearMarkers() {
+  setAllMap(null);
+}
+
+function setAllMap(map) {
+  for (var i = 0; i < markers.length; i++) {
+    markers[i].setMap(map);
+  }
+}
+
+
 function updateMap( type ){
     var type = getTypeOfMap(type);
     map.setMapTypeId( type );

@@ -26,8 +26,9 @@
             updateMap(type);
         }).trigger('change');
 
-        $(".btn-remove-markers").on('click', function( event ){
+        $("button.btn-remove-markers").on('click', function( event ){
             avoidDefaultBehavior( event );
+            deleteMarkers();
         });
     });
 })(jQuery);
