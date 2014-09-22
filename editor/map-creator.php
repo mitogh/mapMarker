@@ -66,7 +66,7 @@ global $wp_scripts;
                     </div>
 
                     <button name="add_mark" id="remove-markers" class="btn btn-danger btn-lg btn-block">Remove markers!</button>
-                    <button type="button" class="btn btn-success btn-lg btn-block">Done & Save</button>
+                    <button type="button" class="btn btn-success btn-lg btn-block">Save & Done!</button>
                 </form>
             </div>
 
