@@ -64,18 +64,18 @@ function addMarker(location) {
 }
 
 function deleteMarkers() {
-  clearMarkers();
-  markers = [];
+    clearMarkers();
+    markers = [];
 }
 
 function clearMarkers() {
-  setAllMap(null);
+    setAllMap(null);
 }
 
 function setAllMap(map) {
-  for (var i = 0; i < markers.length; i++) {
-    markers[i].setMap(map);
-  }
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(map);
+    }
 }
 
 
