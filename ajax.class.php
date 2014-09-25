@@ -24,11 +24,20 @@ class AjaxRequest extends Wordpress{
     }
 
     public function execute(){
-        if( $this->user->canNotEdit() ){
-            dieWithError();
+        if( $this->user->canEdit() ){
+            $this->startEditor();
         }else{
-            include_once $this->url;
+            $this->dieWithError();
         }
+    }
+
+    private function startEditor(){
+        $this->includeFile();
+        die();
+    }
+
+    private function includeFile(){
+        include_once $this->url;
     }
 
     private function dieWithError(){
