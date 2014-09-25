@@ -9,6 +9,15 @@ var mapOptions = {
     zoom: 12
 };
 
+
+function appendMap(){
+    createHTMLDOOM();
+    map = createMap();
+    places = new google.maps.places.PlacesService(map);
+    autocomplete = createAutoComplete();
+    addListeners();
+}
+
 function createHTMLDOOM(){
     var mapcanvas = document.createElement('div');
     mapcanvas.id = 'mapcontainer';
@@ -30,37 +39,50 @@ function createAutoComplete(){
     return new google.maps.places.Autocomplete( document.getElementById('location'), {});
 }
 
+function addListeners(){
+    addAutoCompleteListener();
+    addClickListener();
+}
+
+function addAutoCompleteListener(){
+    google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+}
+
 function onPlaceChanged() {
     var place = autocomplete.getPlace();
     if (place.geometry) {
-        map.panTo(place.geometry.location);
-        map.setZoom(16);
+        var location = place.geometry.location;
+        centerMapIn( location );
     } else {
-        document.getElementById('location').placeholder = 'Enter a city';
+        setDefaultTextToLocationInput();
     }
 }
 
-function appendMap(){
-    createHTMLDOOM();
-    map = createMap();
-    places = new google.maps.places.PlacesService(map);
-    autocomplete = createAutoComplete();
-    addListeners();
+function centerMapIn( location ){
+    map.panTo(location);
+    map.setZoom(16);
 }
 
-function addListeners(){
-    google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+function setDefaultTextToLocationInput(){
+    document.getElementById('location').placeholder = 'Enter a city';
+}
+
+function addClickListener(){
     google.maps.event.addListener(map, 'click', function(event) {
         addMarker(event.latLng);
     });
 }
 
 function addMarker(location) {
-    var marker = new google.maps.Marker({
+    var marker = createMark( location );
+    markers.push(marker);
+}
+
+function createMark( location ){
+    return new google.maps.Marker({
         position: location,
         map: map
     });
-    markers.push(marker);
 }
 
 function deleteMarkers() {
@@ -77,7 +99,6 @@ function setAllMap(map) {
         markers[i].setMap(map);
     }
 }
-
 
 function updateMap( type ){
     var type = getTypeOfMap(type);
