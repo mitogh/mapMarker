@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Map Marker Creator</title>
-        <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php echo get_option('blog_charset'); ?>" />
-        <link rel="stylesheet" type="text/css" media="all" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" media="all" href="<?php echo site_url(); ?>/wp-content/plugins/mapmarker/css/editor.css" />
-        <base target="_self" />
-    </head>
-
+<?php include_once 'header.php'; ?>
     <body id="link">
     <div class="container">
         <div class="row">
@@ -65,15 +56,7 @@
 
           <div id="map" class="col-xs-9">
           </div>
+
         </div>
     </div>
-    <!-- libraries -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
-    <script src="<?php echo site_url(); ?>/wp-includes/js/tinymce/tiny_mce_popup.js"></script>
-
-    <script src="<?php  echo plugin_dir_url( __FILE__ ). '../js/map.js'; ?>"></script>
-    <script src="<?php  echo plugin_dir_url( __FILE__ ). '../js/editor.js'; ?>"></script>
-    </body>
-</html>
+<?php include_once 'footer.php'; ?>
