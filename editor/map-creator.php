@@ -58,8 +58,11 @@ wp_enqueue_script('jquery');
                         </select>
                     </div>
 
-                    <button type="button" class="btn btn-danger btn-lg btn-block btn-remove-markers">Remove markers!</button>
-                    <button type="submit" class="btn btn-success btn-lg btn-block btn-save">Save & Done!</button>
+                    <div class="form-group">
+                        <label>Actions: </label>
+                        <button type="button" class="btn btn-danger btn-block btn-remove-markers">Remove markers!</button>
+                        <button type="submit" class="btn btn-success btn-block btn-save">Save & Done!</button>
+                    </div>
                 </form>
             </div>
 
