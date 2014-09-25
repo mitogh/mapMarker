@@ -30,6 +30,10 @@
             avoidDefaultBehavior( event );
             deleteMarkers();
         });
+
+        $("button.btn-save").on('click', function(event){
+            insertValueInEditor();
+        });
     });
 })(jQuery);
 
@@ -69,4 +73,21 @@ function isValidNumber( number ){
 
 function getValueInPixel( number ){
     return number + "px";
+}
+
+function insertValueInEditor(){
+    var tagText = "[mapMarker]";
+
+    if (window.tinyMCE) {
+        var tmce_ver=window.tinyMCE.majorVersion;
+
+        if (tmce_ver>="4") {
+            window.tinyMCE.execCommand('mceInsertContent', false, tagText);
+        } else {
+            window.tinyMCE.execInstanceCommand('content', 'mceInsertContent', false, tagText);
+        }
+        tinyMCEPopup.editor.execCommand('mceRepaint');
+        tinyMCEPopup.close();
+    }
+    return;
 }
