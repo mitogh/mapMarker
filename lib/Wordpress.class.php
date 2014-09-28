@@ -1,4 +1,4 @@
-<?php namespace mitogh\github\com;
+<?php namespace mitogh\github\com\lib;
 
 class Wordpress{
     /**

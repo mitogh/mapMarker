@@ -9,17 +9,21 @@
  * License: GPL2
  */
 
+
 $base_path = plugin_dir_path( __FILE__ );
-include $base_path . 'Wordpress.class.php';
-include $base_path . 'User.class.php';
-include $base_path . 'TinyMCE.class.php';
 
-$editor = new TinyMCE();
+$lib_directory = '/lib/';
 
-include $base_path . 'ajax.class.php';
+include $base_path . $lib_directory . 'Wordpress.class.php';
+include $base_path . $lib_directory . 'User.class.php';
+include $base_path . $lib_directory . 'TinyMCE.class.php';
 
-$user = new User();
-$ajax = new AjaxRequest( $user );
+$editor = new \mitogh\github\com\lib\TinyMCE();
+
+include $base_path . $lib_directory . 'ajax.class.php';
+
+$user = new \mitogh\github\com\lib\User();
+$ajax = new \mitogh\github\com\lib\AjaxRequest( $user );
 
 $path = $base_path . '/editor/map-creator.php';
 $ajax->send( $path );
