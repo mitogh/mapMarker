@@ -8,10 +8,7 @@
  * Author URI: http://www.crisoforo.com
  * License: GPL2
  */
-
-
 $base_path = plugin_dir_path( __FILE__ );
-
 $lib_directory = '/lib/';
 
 include $base_path . $lib_directory . 'Wordpress.class.php';
