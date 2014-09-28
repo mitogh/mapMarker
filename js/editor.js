@@ -7,14 +7,14 @@
         $("#width").on('focusout keyup', function(){
             var actualWidth = $(this).val();
             var width = getInPixel(actualWidth);
-            $("#mapcontainer").css("width", width); 
+            $("#map-container").css("width", width); 
             redraw();
         });
 
         $("#height").on('focusout keyup', function(){
             var actualHeight = $(this).val();
             var height = getInPixel(actualHeight, 500);
-            $("#mapcontainer").css("height", height); 
+            $("#map-container").css("height", height); 
             redraw();
         });
 
