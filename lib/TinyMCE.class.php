@@ -30,7 +30,7 @@ class TinyMCE extends Wordpress{
     }
 
     public function addButton( $plugin_array ){
-        $plugin_array['mapmarker'] = plugins_url('../js/buttons.js', __FILE__);
+        $plugin_array['mapmarker'] = plugins_url('../editor/js/buttons.js', __FILE__);
         return $plugin_array;
     }
 
@@ -40,6 +40,6 @@ class TinyMCE extends Wordpress{
     }
 
     public function registerButtonStyle(){
-        wp_enqueue_style('mapmarker-button-style', plugins_url('../css/button.css', __FILE__) );
+        wp_enqueue_style('mapmarker-button-style', plugins_url('../editor/css/button.css', __FILE__) );
     }
 }
