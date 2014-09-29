@@ -19,8 +19,7 @@ $editor = new \mitogh\github\com\lib\TinyMCE();
 
 include $base_path . $lib_directory . 'class-ajax.php';
 
-$user = new \mitogh\github\com\lib\User();
-$ajax = new \mitogh\github\com\lib\Ajax_Request( $user );
+$ajax = new \mitogh\github\com\lib\Ajax_Request();
 
 $path = $base_path . '/editor/map-creator.php';
 $ajax->send( $path );

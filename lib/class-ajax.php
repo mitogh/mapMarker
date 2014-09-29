@@ -4,16 +4,6 @@ class Ajax_Request extends Wordpress {
 
     private $url = '';
 
-    private $user = null;
-
-    public function __construct( $user = null ){
-        if( $user instanceof User ){
-            $this->user = $user;
-        }else{
-            throw new Exception( 'Invalid type of User' );
-        }
-    }
-
     public function  send( $url ){
         $this->url = $url;
         $this->register_action_in_wordpress();
@@ -24,7 +14,7 @@ class Ajax_Request extends Wordpress {
     }
 
     public function execute(){
-        if( $this->user->can_edit() ){
+        if( User::can_edit() ){
             $this->start_editor();
         }else{
             $this->die_with_error();
