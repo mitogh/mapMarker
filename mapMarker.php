@@ -11,16 +11,16 @@
 $base_path = plugin_dir_path( __FILE__ );
 $lib_directory = '/lib/';
 
-include $base_path . $lib_directory . 'Wordpress.class.php';
-include $base_path . $lib_directory . 'User.class.php';
-include $base_path . $lib_directory . 'TinyMCE.class.php';
+include $base_path . $lib_directory . 'class-wordpress.php';
+include $base_path . $lib_directory . 'class-user.php';
+include $base_path . $lib_directory . 'class-tinymce.php';
 
 $editor = new \mitogh\github\com\lib\TinyMCE();
 
-include $base_path . $lib_directory . 'ajax.class.php';
+include $base_path . $lib_directory . 'class-ajax.php';
 
 $user = new \mitogh\github\com\lib\User();
-$ajax = new \mitogh\github\com\lib\AjaxRequest( $user );
+$ajax = new \mitogh\github\com\lib\Ajax_Request( $user );
 
 $path = $base_path . '/editor/map-creator.php';
 $ajax->send( $path );
