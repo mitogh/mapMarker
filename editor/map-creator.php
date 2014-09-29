@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="type">Align: </label>
+                        <label for="type">Alignment: </label>
                         <select class="form-control align-control">
                             <option value="left">Left</option>
                             <option value="center">Center</option>
