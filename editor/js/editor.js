@@ -76,10 +76,11 @@ function getValueInPixel( number ){
 }
 
 function insertValueInEditor(){
-    var tagText = "[mapMarker]";
+    var tagText = '[mapMarker]';
 
     if (window.tinyMCE) {
-        var tmce_ver=window.tinyMCE.majorVersion;
+        var tmce_ver = window.tinyMCE.majorVersion;
+        tagText += '[/mapMarker]';
 
         if (tmce_ver>="4") {
             window.tinyMCE.execCommand('mceInsertContent', false, tagText);
