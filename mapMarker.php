@@ -1,8 +1,8 @@
 <?php namespace mitogh\github\com;
 /**
- * Plugin Name: Map Marker with Google Maps
+ * Plugin Name: Map Marker using Google Maps API
  * Plugin URI: https://github.com/mitogh/mapMarker
- * Description: Plugin for Wordpress to insert maps with different locations in a map. Using Google Maps API.
+ * Description: Plugin to insert multiple markers in a Location. Using Google Maps API.
  * Version: 0.1
  * Author: Crisoforo Gaspar
  * Author URI: http://www.crisoforo.com
