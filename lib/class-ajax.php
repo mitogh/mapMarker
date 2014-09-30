@@ -4,7 +4,7 @@ class Ajax_Request extends Wordpress {
 
     private $url = '';
 
-    public function  send( $url ){
+    public function send( $url ){
         $this->url = $url;
         $this->register_action_in_wordpress();
     }
@@ -17,21 +17,21 @@ class Ajax_Request extends Wordpress {
         if( User::can_edit() ){
             $this->start_editor();
         }else{
-            $this->die_with_error();
+            $this->end( $this->error_message() );
         }
     }
 
     private function start_editor(){
         $this->include_file();
-        die();
+        $this->end();
     }
 
     private function include_file(){
         include_once $this->url;
     }
 
-    private function die_with_error(){
-        die( $this->error_message() );
+    private function end( $message = '' ){
+        die( $message );
     }
 
     private function error_message(){
