@@ -1,4 +1,4 @@
-<?php namespace mitogh\github\com\lib;
+<?php namespace com\github\mitogh\lib;
 
 class User {
     public static function can_edit(){
