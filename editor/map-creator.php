@@ -14,7 +14,7 @@
                     <div class="form-group">
                         <label for="width">Width </label>
                         <div class="input-group">
-                            <input id="width" name="width" type="number" class="form-control" placeholder="500">
+                            <input id="width" name="width" type="number" class="form-control" placeholder="500" min="1" max="5000">
                             <span class="input-group-addon">px</span>
                         </div>
                     </div>
@@ -22,7 +22,7 @@
                     <div class="form-group">
                         <label for="height">Height </label>
                         <div class="input-group">
-                            <input id="height" name="height" type="number" class="form-control" placeholder="400">
+                            <input id="height" name="height" type="number" class="form-control" placeholder="400" min="1" max="5000">
                             <span class="input-group-addon">px</span>
                         </div>
                     </div>
