@@ -1,4 +1,4 @@
-<?php namespace com\github\mitogh\lib;
+<?php namespace com\github\mitogh\mapMarker\lib;
 
 class Ajax_Request extends Wordpress {
 

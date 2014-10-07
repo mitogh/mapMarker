@@ -1,4 +1,7 @@
-<?php namespace com\github\mitogh;
+<?php namespace com\github\mitogh\mapMarker;
+
+use \com\github\mitogh\mapMarker\lib as Library;
+
 /**
  * Plugin Name: Map Marker using Google Maps API
  * Plugin URI: https://github.com/mitogh/mapMarker
@@ -15,11 +18,11 @@ include $base_path . $lib_directory . 'class-wordpress.php';
 include $base_path . $lib_directory . 'class-user.php';
 include $base_path . $lib_directory . 'class-tinymce.php';
 
-$editor = new \com\github\mitogh\lib\TinyMCE();
+$editor = new Library\TinyMCE();
 
 include $base_path . $lib_directory . 'class-ajax.php';
 
-$ajax = new \com\github\mitogh\lib\Ajax_Request();
+$ajax = new Library\Ajax_Request();
 
 $path = $base_path . '/editor/map-creator.php';
 $ajax->send( $path );
