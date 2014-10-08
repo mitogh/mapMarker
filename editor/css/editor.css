@@ -6,3 +6,7 @@
 body {
      max-width:600px;
 }
+
+#map {
+    background: #FFF url('../img/loading.gif') no-repeat center;
+}

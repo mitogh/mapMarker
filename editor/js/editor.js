@@ -58,17 +58,15 @@ function getInPixel( expectedValue, defaultValue ){
     if( isValidNumber( expectedValue ) ){
         return getValueInPixel(expectedValue);
     }else{
-        return getValueInPixel(defaulValue);
+        return getValueInPixel(10);
     }
 }
 
 function isValidNumber( number ){
-    number = parseInt(number);
-    if( !isNaN(number) && number > 0 ){
-        return true;
-    }else{
-        return false;
-    }
+    var numbers = /^[0-9]+$/;
+    console.log(number)
+    //return number.value.match(numbers);
+    return true;
 }
 
 function getValueInPixel( number ){
